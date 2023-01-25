@@ -19,7 +19,9 @@ router.post("/register", (req, res) => {
   const register_time = new Date();
 
   db.query("SELECT email FROM users WHERE email = ?", [email], async (error, results) => {
+    console.log("hey hello");
     if (error) {
+      console.log("fuck error again");
       console.log(error);
     }
 
@@ -40,6 +42,7 @@ router.post("/register", (req, res) => {
       },
       (error, results) => {
         if (error) {
+          console.log("son of a bitch");
           console.log(error);
         } else {
           return res.send({ message: "User registered successfully!" });
