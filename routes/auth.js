@@ -43,7 +43,7 @@ router.post("/register", (req, res) => {
       },
       (error, results) => {
         if (error) {
-          console.log("son of a bitch");
+          console.log("son of a bitch, problem is here");
           console.log(error);
         } else {
           return res.send({ message: "User registered successfully!" });
