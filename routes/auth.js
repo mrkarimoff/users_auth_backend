@@ -17,6 +17,7 @@ const router = express.Router();
 router.post("/register", (req, res) => {
   const { email, password, username } = req.body;
   const register_time = new Date();
+  console.log("chitu shimo");
 
   db.query("SELECT email FROM users WHERE email = ?", [email], async (error, results) => {
     console.log("hey hello");
