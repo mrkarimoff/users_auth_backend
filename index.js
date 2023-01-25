@@ -36,10 +36,14 @@ db.connect((error) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.send("Hello my friend!");
+});
+
 app.use("/auth", require("./routes/auth"));
 app.use("/update", require("./routes/update"));
 
-app.get("/", validateToken, (req, res) => {
+app.get("/cabinet", validateToken, (req, res) => {
   db.query("SELECT * FROM users", (error, data, fields) => {
     if (error) {
       return res.status(403).send({ message: "Error has ocurred in DB, please try again" });
