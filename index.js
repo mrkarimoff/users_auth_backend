@@ -3,6 +3,7 @@ const mysql = require("mysql");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const { validateToken } = require("./JWT");
+const { PORT, DB_HOST, DB_NAME, DB_PASSWORD, DB_PORT, DB_USER } = require("./config");
 
 dotenv.config({ path: "./.env" });
 
@@ -19,11 +20,11 @@ app.use(cors(corsOptions));
 // app.use(cors());
 
 const db = mysql.createConnection({
-  host: "containers-us-west-70.railway.app",
-  user: "root",
-  port: 6059,
-  password: "6cJmt6GCYe2rLNyB7vkc",
-  database: "railway",
+  host: DB_HOST,
+  user: DB_USER,
+  port: DB_PORT,
+  password: DB_PASSWORD,
+  database: DB_NAME,
 });
 
 db.connect((error) => {
@@ -50,5 +51,4 @@ app.get("/", validateToken, (req, res) => {
   });
 });
 
-const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Listening to port ${PORT}`));
