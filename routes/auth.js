@@ -36,7 +36,7 @@ router.post("/register", (req, res) => {
     db.query(
       "INSERT INTO users SET ?",
       {
-        username: username,
+        username: "hell",
         email: email,
         password: hashedPassword,
         register_time: register_time,
