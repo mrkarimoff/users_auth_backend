@@ -19,11 +19,11 @@ app.use(cors(corsOptions));
 // app.use(cors());
 
 const db = mysql.createConnection({
-  host: "localhost",
+  host: "containers-us-west-70.railway.app",
   user: "root",
-  port: 8111,
-  password: "",
-  database: "task4-login",
+  port: 6059,
+  password: "6cJmt6GCYe2rLNyB7vkc",
+  database: "railway",
 });
 
 db.connect((error) => {
