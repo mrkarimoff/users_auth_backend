@@ -19,11 +19,11 @@ app.use(cors(corsOptions));
 // app.use(cors());
 
 const db = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  port: process.env.DB_PORT,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB,
+  host: "localhost",
+  user: "root",
+  port: 8111,
+  password: "",
+  database: "task4-login",
 });
 
 db.connect((error) => {
