@@ -54,6 +54,7 @@ router.post("/login", async (req, res) => {
 
   db.query("SELECT * FROM users WHERE email = ? LIMIT 1", [email], (error, data, fields) => {
     if (error) {
+      console.log(error);
       return res.status(403).send({ message: "Error has ocurred, please try again" });
     }
 
