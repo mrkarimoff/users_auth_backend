@@ -29,7 +29,7 @@ const db = mysql.createConnection({
 
 db.connect((error) => {
   if (error) {
-    console.log("fuck there is a problem!");
+    console.log("damn, there is a problem again!");
     console.log(error);
   } else {
     console.log("db connected");
